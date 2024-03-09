@@ -1,0 +1,6 @@
+cygwin warning:
+  MS-DOS style path detected: C:\Users\jackd\OneDrive - Heriot-Watt University\Year_4\Semester_2\F20AN\F20AN-Coursework\GNS3-Topology\project-files\dynamips
+  Preferred POSIX equivalent is: /cygdrive/c/Users/jackd/OneDrive - Heriot-Watt University/Year_4/Semester_2/F20AN/F20AN-Coursework/GNS3-Topology/project-files/dynamips
+  CYGWIN environment variable option "nodosfilewarning" turns off this warning.
+  Consult the user's guide for more details about POSIX paths:
+    http://cygwin.com/cygwin-ug-net/using.html#using-pathnames
