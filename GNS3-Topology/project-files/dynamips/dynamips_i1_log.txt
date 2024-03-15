@@ -1,0 +1,6 @@
+Mar 15 19:09:54.160 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Mar 15 19:09:54.161 HYPERVISOR: Started on IP = localhost, TCP port = 50607.
+Mar 15 19:09:54.402 HYPERVISOR: exec_cmd: hypervisor version 
+Mar 15 19:09:54.402 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\jackd\OneDrive - Heriot-Watt University\Year_4\Semester_2\F20AN\F20AN-Coursework\GNS3-Topology\project-files\dynamips 
+Mar 15 19:09:54.406 GENERAL: working_dir=C:\Users\jackd\OneDrive - Heriot-Watt University\Year_4\Semester_2\F20AN\F20AN-Coursework\GNS3-Topology\project-files\dynamips
+Mar 15 19:09:54.406 HYPERVISOR: exec_cmd: ethsw create Switch1 

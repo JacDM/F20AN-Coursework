@@ -1,0 +1,9 @@
+Mar 15 19:09:54.465 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Mar 15 19:09:54.466 HYPERVISOR: Started on IP = localhost, TCP port = 50614.
+Mar 15 19:09:54.978 HYPERVISOR: exec_cmd: hypervisor version 
+Mar 15 19:09:54.979 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\jackd\OneDrive - Heriot-Watt University\Year_4\Semester_2\F20AN\F20AN-Coursework\GNS3-Topology\project-files\dynamips 
+Mar 15 19:09:54.979 GENERAL: working_dir=C:\Users\jackd\OneDrive - Heriot-Watt University\Year_4\Semester_2\F20AN\F20AN-Coursework\GNS3-Topology\project-files\dynamips
+Mar 15 19:09:54.980 HYPERVISOR: exec_cmd: ethsw create Switch2 
+Mar 15 19:09:55.776 HYPERVISOR: exec_cmd: nio create_udp udp-27263b04-7195-4916-ba43-c4c6a03a1799 10002 127.0.0.1 10003 
+Mar 15 19:09:55.776 HYPERVISOR: exec_cmd: ethsw add_nio Switch2 udp-27263b04-7195-4916-ba43-c4c6a03a1799 
+Mar 15 19:09:55.794 HYPERVISOR: exec_cmd: ethsw set_access_port Switch2 udp-27263b04-7195-4916-ba43-c4c6a03a1799 1 
