@@ -312,10 +312,6 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2288.0_x64__qbz5n2kfra8p0\\Lib\\py_compile.py',
    'PYMODULE'),
-  ('pywin32_system32', '-', 'PYMODULE'),
-  ('pywintypes',
-   'C:\\Users\\jackd\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\win32\\lib\\pywintypes.py',
-   'PYMODULE'),
   ('quopri',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2288.0_x64__qbz5n2kfra8p0\\Lib\\quopri.py',
@@ -395,18 +391,6 @@
   ('urllib.parse',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2288.0_x64__qbz5n2kfra8p0\\Lib\\urllib\\parse.py',
-   'PYMODULE'),
-  ('win32con',
-   'C:\\Users\\jackd\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\win32\\lib\\win32con.py',
-   'PYMODULE'),
-  ('win32evtlogutil',
-   'C:\\Users\\jackd\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\win32\\lib\\win32evtlogutil.py',
-   'PYMODULE'),
-  ('win32serviceutil',
-   'C:\\Users\\jackd\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\win32\\lib\\win32serviceutil.py',
-   'PYMODULE'),
-  ('winerror',
-   'C:\\Users\\jackd\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\win32\\lib\\winerror.py',
    'PYMODULE'),
   ('zipfile',
    'C:\\Program '

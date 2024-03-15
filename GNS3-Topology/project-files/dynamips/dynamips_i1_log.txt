@@ -4,3 +4,12 @@ Mar 15 19:09:54.402 HYPERVISOR: exec_cmd: hypervisor version
 Mar 15 19:09:54.402 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\jackd\OneDrive - Heriot-Watt University\Year_4\Semester_2\F20AN\F20AN-Coursework\GNS3-Topology\project-files\dynamips 
 Mar 15 19:09:54.406 GENERAL: working_dir=C:\Users\jackd\OneDrive - Heriot-Watt University\Year_4\Semester_2\F20AN\F20AN-Coursework\GNS3-Topology\project-files\dynamips
 Mar 15 19:09:54.406 HYPERVISOR: exec_cmd: ethsw create Switch1 
+Mar 15 19:09:55.719 HYPERVISOR: exec_cmd: nio create_udp udp-fbd9d69c-4789-466c-afc8-d1426b164e17 10000 127.0.0.1 10001 
+Mar 15 19:09:55.720 HYPERVISOR: exec_cmd: ethsw add_nio Switch1 udp-fbd9d69c-4789-466c-afc8-d1426b164e17 
+Mar 15 19:09:55.745 HYPERVISOR: exec_cmd: ethsw set_access_port Switch1 udp-fbd9d69c-4789-466c-afc8-d1426b164e17 1 
+Mar 15 19:09:55.836 HYPERVISOR: exec_cmd: nio create_udp udp-17ce255b-1d6f-4c6d-b163-39a6d587898b 10005 127.0.0.1 10004 
+Mar 15 19:09:55.837 HYPERVISOR: exec_cmd: ethsw add_nio Switch1 udp-17ce255b-1d6f-4c6d-b163-39a6d587898b 
+Mar 15 19:09:55.840 HYPERVISOR: exec_cmd: ethsw set_access_port Switch1 udp-17ce255b-1d6f-4c6d-b163-39a6d587898b 1 
+Mar 15 19:09:56.150 HYPERVISOR: exec_cmd: nio create_udp udp-ae30d75b-2ae6-4460-b1f8-8d8b3f2f9972 10008 127.0.0.1 10009 
+Mar 15 19:09:56.150 HYPERVISOR: exec_cmd: ethsw add_nio Switch1 udp-ae30d75b-2ae6-4460-b1f8-8d8b3f2f9972 
+Mar 15 19:09:56.182 HYPERVISOR: exec_cmd: ethsw set_access_port Switch1 udp-ae30d75b-2ae6-4460-b1f8-8d8b3f2f9972 1 

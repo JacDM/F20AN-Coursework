@@ -77,7 +77,7 @@
                 "rotation": 0,
                 "svg": "<svg width=\"189\" height=\"24\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\">FAKE WEBSITE (place here)</text></svg>",
                 "x": 205,
-                "y": -137,
+                "y": -162,
                 "z": 2
             },
             {
@@ -279,6 +279,32 @@
                         },
                         "node_id": "53fe2f5e-344f-46a5-91d5-8a3ee98e9475",
                         "port_number": 0
+                    }
+                ],
+                "suspend": false
+            },
+            {
+                "filters": {},
+                "link_id": "1f58c239-2a4c-4d3b-b345-52c56d31ed68",
+                "link_style": {},
+                "nodes": [
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "text": "0/0"
+                        },
+                        "node_id": "869fbcd9-032c-4e31-81f4-c0cc34a587c4",
+                        "port_number": 0
+                    },
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "text": "0/1"
+                        },
+                        "node_id": "990cb058-0180-4624-9648-468610d18182",
+                        "port_number": 1
                     }
                 ],
                 "suspend": false
@@ -615,6 +641,44 @@
                 "width": 159,
                 "x": -229,
                 "y": -35,
+                "z": 1
+            },
+            {
+                "compute_id": "local",
+                "console": null,
+                "console_auto_start": false,
+                "console_type": "none",
+                "custom_adapters": [],
+                "first_port_name": "",
+                "height": 59,
+                "label": {
+                    "rotation": 0,
+                    "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                    "text": "SET-Kali-1",
+                    "x": -5,
+                    "y": -25
+                },
+                "locked": false,
+                "name": "SET-Kali-1",
+                "node_id": "869fbcd9-032c-4e31-81f4-c0cc34a587c4",
+                "node_type": "vmware",
+                "port_name_format": "Ethernet{0}",
+                "port_segment_size": 0,
+                "properties": {
+                    "adapter_type": "e1000",
+                    "adapters": 1,
+                    "headless": false,
+                    "linked_clone": false,
+                    "on_close": "power_off",
+                    "usage": "",
+                    "use_any_adapter": false,
+                    "vmx_path": "C:\\Users\\jackd\\VMS\\F20AN\\SET\\kali-linux-2023.3-vmware-amd64.vmwarevm\\kali-linux-2023.3-vmware-amd64.vmx"
+                },
+                "symbol": ":/symbols/vmware_guest.svg",
+                "template_id": "243c4fbe-d5f7-40ca-9d1b-cc0a091bb623",
+                "width": 65,
+                "x": 267,
+                "y": -104,
                 "z": 1
             }
         ]
