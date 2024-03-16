@@ -1,15 +1,25 @@
-Mar 15 19:09:54.160 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
-Mar 15 19:09:54.161 HYPERVISOR: Started on IP = localhost, TCP port = 50607.
-Mar 15 19:09:54.402 HYPERVISOR: exec_cmd: hypervisor version 
-Mar 15 19:09:54.402 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\jackd\OneDrive - Heriot-Watt University\Year_4\Semester_2\F20AN\F20AN-Coursework\GNS3-Topology\project-files\dynamips 
-Mar 15 19:09:54.406 GENERAL: working_dir=C:\Users\jackd\OneDrive - Heriot-Watt University\Year_4\Semester_2\F20AN\F20AN-Coursework\GNS3-Topology\project-files\dynamips
-Mar 15 19:09:54.406 HYPERVISOR: exec_cmd: ethsw create Switch1 
-Mar 15 19:09:55.719 HYPERVISOR: exec_cmd: nio create_udp udp-fbd9d69c-4789-466c-afc8-d1426b164e17 10000 127.0.0.1 10001 
-Mar 15 19:09:55.720 HYPERVISOR: exec_cmd: ethsw add_nio Switch1 udp-fbd9d69c-4789-466c-afc8-d1426b164e17 
-Mar 15 19:09:55.745 HYPERVISOR: exec_cmd: ethsw set_access_port Switch1 udp-fbd9d69c-4789-466c-afc8-d1426b164e17 1 
-Mar 15 19:09:55.836 HYPERVISOR: exec_cmd: nio create_udp udp-17ce255b-1d6f-4c6d-b163-39a6d587898b 10005 127.0.0.1 10004 
-Mar 15 19:09:55.837 HYPERVISOR: exec_cmd: ethsw add_nio Switch1 udp-17ce255b-1d6f-4c6d-b163-39a6d587898b 
-Mar 15 19:09:55.840 HYPERVISOR: exec_cmd: ethsw set_access_port Switch1 udp-17ce255b-1d6f-4c6d-b163-39a6d587898b 1 
-Mar 15 19:09:56.150 HYPERVISOR: exec_cmd: nio create_udp udp-ae30d75b-2ae6-4460-b1f8-8d8b3f2f9972 10008 127.0.0.1 10009 
-Mar 15 19:09:56.150 HYPERVISOR: exec_cmd: ethsw add_nio Switch1 udp-ae30d75b-2ae6-4460-b1f8-8d8b3f2f9972 
-Mar 15 19:09:56.182 HYPERVISOR: exec_cmd: ethsw set_access_port Switch1 udp-ae30d75b-2ae6-4460-b1f8-8d8b3f2f9972 1 
+Mar 16 13:39:39.231 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Mar 16 13:39:39.233 HYPERVISOR: Started on IP = localhost, TCP port = 59392.
+Mar 16 13:39:39.709 HYPERVISOR: exec_cmd: hypervisor version 
+Mar 16 13:39:39.710 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\jackd\OneDrive - Heriot-Watt University\Year_4\Semester_2\F20AN\F20AN-Coursework\GNS3-Topology\project-files\dynamips 
+Mar 16 13:39:39.712 GENERAL: working_dir=C:\Users\jackd\OneDrive - Heriot-Watt University\Year_4\Semester_2\F20AN\F20AN-Coursework\GNS3-Topology\project-files\dynamips
+Mar 16 13:39:39.713 HYPERVISOR: exec_cmd: ethsw create Switch1 
+Mar 16 13:39:40.919 HYPERVISOR: exec_cmd: nio create_udp udp-8bcb753b-5d27-4efc-a01d-87c5540724de 10000 127.0.0.1 10001 
+Mar 16 13:39:40.920 HYPERVISOR: exec_cmd: ethsw add_nio Switch1 udp-8bcb753b-5d27-4efc-a01d-87c5540724de 
+Mar 16 13:39:40.926 HYPERVISOR: exec_cmd: ethsw set_access_port Switch1 udp-8bcb753b-5d27-4efc-a01d-87c5540724de 1 
+Mar 16 13:39:40.999 HYPERVISOR: exec_cmd: nio create_udp udp-fb7b94f3-c019-435c-95ea-271050bea63b 10005 127.0.0.1 10004 
+Mar 16 13:39:40.999 HYPERVISOR: exec_cmd: ethsw add_nio Switch1 udp-fb7b94f3-c019-435c-95ea-271050bea63b 
+Mar 16 13:39:41.019 HYPERVISOR: exec_cmd: ethsw set_access_port Switch1 udp-fb7b94f3-c019-435c-95ea-271050bea63b 1 
+Mar 16 13:39:41.043 HYPERVISOR: exec_cmd: nio create_udp udp-7b8a887d-5602-4018-a618-97957c8ff349 10006 127.0.0.1 10007 
+Mar 16 13:39:41.044 HYPERVISOR: exec_cmd: ethsw add_nio Switch1 udp-7b8a887d-5602-4018-a618-97957c8ff349 
+Mar 16 13:39:41.050 HYPERVISOR: exec_cmd: ethsw set_access_port Switch1 udp-7b8a887d-5602-4018-a618-97957c8ff349 1 
+Mar 16 13:39:49.843 HYPERVISOR: exec_cmd: ethsw remove_nio Switch1 udp-8bcb753b-5d27-4efc-a01d-87c5540724de 
+Mar 16 13:39:49.874 HYPERVISOR: exec_cmd: nio delete udp-8bcb753b-5d27-4efc-a01d-87c5540724de 
+Mar 16 13:39:49.896 HYPERVISOR: exec_cmd: ethsw remove_nio Switch1 udp-fb7b94f3-c019-435c-95ea-271050bea63b 
+Mar 16 13:39:49.904 HYPERVISOR: exec_cmd: nio delete udp-fb7b94f3-c019-435c-95ea-271050bea63b 
+Mar 16 13:39:49.922 HYPERVISOR: exec_cmd: ethsw remove_nio Switch1 udp-7b8a887d-5602-4018-a618-97957c8ff349 
+Mar 16 13:39:49.935 HYPERVISOR: exec_cmd: nio delete udp-7b8a887d-5602-4018-a618-97957c8ff349 
+Mar 16 13:39:49.959 HYPERVISOR: exec_cmd: ethsw delete Switch1 
+Mar 16 13:39:49.960 HYPERVISOR: exec_cmd: hypervisor stop 
+Mar 16 13:39:50.397 HYPERVISOR: Stopped.
+Mar 16 13:39:50.397 GENERAL: reset done.

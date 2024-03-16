@@ -1,9 +1,0 @@
-uBridge version 0.9.16 running with Npcap version 1.78, based on libpcap version 1.10.4
-Hypervisor TCP control server started (IP localhost port 52691).
-UDP tunnel connecting from local port 10006 to IPv4 addresss 127.0.0.1 on port 10007
-Ethernet interface \Device\NPF_{6A02D60A-C558-46BD-86D9-BCE012D79FDA}
-Source NIO listener thread for 6213a78a-44d9-4fff-b201-5285968a0979-0 has started
-Destination NIO listener thread for 6213a78a-44d9-4fff-b201-5285968a0979-0 has started
-Capturing to file 'C:\Users\jackd\OneDrive - Heriot-Watt University\Year_4\Semester_2\F20AN\F20AN-Coursework\GNS3-Topology\project-files\captures\NAT1_nat0_to_DNS_Ethernet0.pcap'
-Capturing to file 'C:\Users\jackd\OneDrive - Heriot-Watt University\Year_4\Semester_2\F20AN\F20AN-Coursework\GNS3-Topology\project-files\captures\NAT1_nat0_to_DNS_Ethernet0.pcap'
-Capturing to file 'C:\Users\jackd\OneDrive - Heriot-Watt University\Year_4\Semester_2\F20AN\F20AN-Coursework\GNS3-Topology\project-files\captures\NAT1_nat0_to_DNS_Ethernet0.pcap'
