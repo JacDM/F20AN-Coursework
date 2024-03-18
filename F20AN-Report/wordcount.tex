@@ -1,0 +1,26 @@
+\newpage
+% texcount
+\newcommand{\detailtexcount}[1]{%
+  \immediate\write18{texcount -merge -sum -q #1.tex output.bbl > #1.wcdetail }%
+  \verbatiminput{#1.wcdetail}%
+}
+% count words
+\newcommand{\quickwordcount}[1]{%
+  \immediate\write18{texcount -1 -sum -merge -q #1.tex output.bbl > #1-words.sum }%
+  \input{#1-words.sum} words%
+}
+% count chars
+\newcommand{\quickcharcount}[1]{%
+  \immediate\write18{texcount -1 -sum -merge -char -q #1.tex output.bbl > #1-chars.sum }%
+  \input{#1-chars.sum} characters (not including spaces)%
+}
+\quickwordcount{main}
+\quickcharcount{main}
+\detailtexcount{main}
+%TC:group comment 0 0
+%TC:group table 0 1
+%TC:group tabular 1 1
+%TC:group algorithm 0 1
+%TC:group algorithmic 1 1
+
+
